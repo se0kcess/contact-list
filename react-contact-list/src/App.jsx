@@ -5,7 +5,7 @@ import GroupModal from './components/GroupModal';
 import DetailModal from './components/DetailModal';
 import './css/App.css';
 
-export default function App() {
+function App() {
   const initialContacts = JSON.parse(localStorage.getItem('contacts')) || [];
   const initialGroups = JSON.parse(localStorage.getItem('groups')) || ['가족', '친구', '직장', '스터디'];
 
@@ -56,3 +56,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;

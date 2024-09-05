@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Modal.css';
+import '../styles/Modal.css';
 
 export default function ContactItem({ contact, onDelete, onDetail }) {
   return (

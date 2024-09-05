@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/Modal.css';
+import '../styles/Modal.css';
 
 export default function GroupModal({ groups, updateGroups, onClose }) {
   const [newGroup, setNewGroup] = useState('');

@@ -3,7 +3,7 @@ import InputCon from './components/InputCon';
 import ListArea from './components/ListArea';
 import GroupModal from './components/GroupModal';
 import DetailModal from './components/DetailModal';
-import './css/App.css';
+import './styles/App.css';
 
 function App() {
   const initialContacts = JSON.parse(localStorage.getItem('contacts')) || [];

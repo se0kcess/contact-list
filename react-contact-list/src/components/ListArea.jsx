@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactItem from './ContactItem';
 import SearchCon from './SearchCon';
-import '../css/ListArea.css';
+import '../styles/ListArea.css';
 
 export default function ListArea({ contacts, deleteContact, setSelectedContact, setSearchTerm }) {
   return (

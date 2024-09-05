@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/InputCon.css';
+import '../styles/InputCon.css';
 
 export default function InputCon({ addContact, groups, openGroupModal }) {
   const [name, setName] = useState('');

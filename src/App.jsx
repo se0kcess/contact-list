@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import InputCon from './components/InputCon';
-import ListArea from './components/ListArea';
+import ContactList from './components/ContactList';
 import GroupModal from './components/GroupModal';
 import DetailModal from './components/DetailModal';
 import './styles/App.css';
@@ -16,9 +16,18 @@ function App() {
   const [selectedContact, setSelectedContact] = useState(null);
 
   const addContact = (newContact) => {
+    const isDuplicate = contacts.some((contact) => contact.name === newContact.name);
+    if (isDuplicate) {
+      return { success: false, error: '동일한 이름의 연락처가 존재합니다.' };
+    }
+    const isDuplicatePhoneNum = contacts.some((contact) => contact.phone === newContact.phone);
+    if (isDuplicatePhoneNum) {
+      return { success: false, error: '동일한 전화번호가 존재합니다.' };
+    }
     const updatedContacts = [...contacts, newContact];
     setContacts(updatedContacts);
     localStorage.setItem('contacts', JSON.stringify(updatedContacts));
+    return { success: true };
   };
 
   const deleteContact = (index) => {
@@ -42,7 +51,7 @@ function App() {
       <h1>연락처 리스트</h1>
       <div className='content'>
         <InputCon addContact={addContact} groups={groups} openGroupModal={() => setIsGroupModalOpen(true)} />
-        <ListArea
+        <ContactList
           contacts={filteredContacts}
           deleteContact={deleteContact}
           setSelectedContact={setSelectedContact}

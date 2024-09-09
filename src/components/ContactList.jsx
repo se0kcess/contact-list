@@ -1,9 +1,9 @@
 import React from 'react';
 import ContactItem from './ContactItem';
 import SearchCon from './SearchCon';
-import '../styles/ListArea.css';
+import '../styles/ContactList.css';
 
-export default function ListArea({ contacts, deleteContact, setSelectedContact, setSearchTerm }) {
+export default function ContactList({ contacts, deleteContact, setSelectedContact, setSearchTerm }) {
   return (
     <div className='list-area'>
       <SearchCon setSearchTerm={setSearchTerm} />
